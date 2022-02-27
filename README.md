@@ -31,8 +31,8 @@ https://docs.google.com/spreadsheets/d/17N8mc6iHT4oOYxJbhpaUDVebFQ-LJw2sCSK2aVf9
 
 ## 開発環境
 
-*　OS：Windows10
-*　言語：HTML,CSS,JavaScript,Ruby,SQL
-*　フレームワーク：Ruby on Rails
-*　JSライブラリ：jQuery
-*　IDE：Cloud9
+* OS：Windows10
+* 言語：HTML,CSS,JavaScript,Ruby,SQL
+* フレームワーク：Ruby on Rails
+* JSライブラリ：jQuery
+* IDE：Cloud9
