@@ -1,24 +1,38 @@
-# README
+#seven（仮）
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+##サイト概要
 
-Things you may want to cover:
+*SNS普及したて当時のややこしく考えなくていいシンプルなコミュニティサイト
 
-* Ruby version
+###サイトテーマ
 
-* System dependencies
+誹謗中傷ゼロのSNS
+SNSが普及しきった今だからこそ語りにくいことを積極的に発信できるようなSNS
 
-* Configuration
+###テーマを選んだ理由
 
-* Database creation
+ふと誹謗中傷をゼロにするためになにが必要かを考えたときに、ゼロからSNSを作ってしまうことが手っ取り早いと感じた。
+ただ、仮にこのサービスが普及し、いつかは誹謗中傷が生まれてしまうと思う。
+それでもなお、誹謗中傷をゼロにするためにどういうサービスを展開していくべきかを考え、実験的に挑戦したいことを形にしたサイト。
 
-* Database initialization
+###ターゲットユーザ
 
-* How to run the test suite
+SNSが好きな人。SNS上での交流がほしい人。
 
-* Services (job queues, cache servers, search engines, etc.)
+###主な利用シーン
 
-* Deployment instructions
+普段のSNSの投稿より少し気合の入った投稿をするとき。
 
-* ...
+##設計書
+
+##チャレンジ要素一覧
+
+https://docs.google.com/spreadsheets/d/17N8mc6iHT4oOYxJbhpaUDVebFQ-LJw2sCSK2aVf92Wg/edit?usp=sharing
+
+##開発環境
+
+・　OS：Windows10
+・　言語：HTML,CSS,JavaScript,Ruby,SQL
+・　フレームワーク：Ruby on Rails
+・　JSライブラリ：jQuery
+・　IDE：Cloud9
