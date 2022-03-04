@@ -1,1 +1,4 @@
 <h3>show</h3>
+<% if current_user == @user %>
+  <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+<% end %>

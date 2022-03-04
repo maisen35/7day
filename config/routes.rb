@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :admin,skip: [:registrations,  :passwords], controllers: {
-    sessions: "admin/sessions"
+  devise_for :admin,skip: [:registrations, :passwords], controllers: {
+    sessions: "admin/sessions",
   }
 
   namespace :admin do
@@ -9,8 +9,8 @@ Rails.application.routes.draw do
   end
 
   devise_for :users,skip: [:passwords], controllers: {
-    regstrations: "public/registrations",
-    sessions: "public/sessions"
+    registrations: "public/registrations",
+    sessions: "public/sessions",
   }
 
   scope module: :public do
