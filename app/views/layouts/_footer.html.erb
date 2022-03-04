@@ -1,0 +1,7 @@
+<% if user_signed_in? %>
+  <footer>お問い合わせ</footer>
+<% elsif admin_signed_in? %>
+  <footer></footer>
+<% else %>
+  <footer>まる儲け</footer>
+<% end %>
