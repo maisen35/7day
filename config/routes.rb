@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :users, only: [:index, :show, :edit, :update]
-    resources :posts, only: [:destroy]
+    resources :tweets, only: [:destroy]
   end
 
   devise_for :users,skip: [:passwords], controllers: {
@@ -14,13 +14,13 @@ Rails.application.routes.draw do
   }
 
   scope module: :public do
-    get 'posts/thanks' => 'posts#thanks', as: 'thanks'
+    get 'tweets/thanks' => 'tweets#thanks', as: 'thanks'
     resources :users, only: [:show, :edit, :update] do
       resource :relationships, only: [:create, :destroy]
       get 'followings' => 'relationships#followings', as: 'followings'
       get 'followers' => 'relationships#followers', as: 'followers'
     end
-    resources :posts, only: [:new, :index, :show, :create] do
+    resources :tweets, only: [:new, :index, :show, :create] do
       resource :likes, only: [:create, :destroy]
     end
   end
