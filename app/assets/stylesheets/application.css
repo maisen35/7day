@@ -30,6 +30,14 @@
    background-color: yellow;
  }
 
+ .pink {
+   background-color: pink;
+ }
+
+ .brown {
+   background-color: brown;
+ }
+
 .vert {
   -ms-writing-mode: tb-rl;
   writing-mode: vertical-rl;

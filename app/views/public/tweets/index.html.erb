@@ -3,8 +3,13 @@
     <div class="col-6 yellow">r</div>
     <div class="col-6 grey">
       <% @tweets.each do |tweet| %>
+        <%= link_to user_path(tweet.user.id) do %>
+          <%= image_tag tweet.user.get_profile_image, class: "col-2" %>
+          <%= tweet.user.name %>
+        <% end %>
         <%= tweet.tweet %>
-        <%= tweet.user.name %>
+        <%= link_to 'show', tweet_path(tweet) %>
+        <%= render 'public/likes/like', tweet: tweet %>
       <% end %>
     </div>
   </div>
