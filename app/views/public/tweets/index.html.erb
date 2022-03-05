@@ -1,0 +1,11 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-6 yellow">r</div>
+    <div class="col-6 grey">
+      <% @tweets.each do |tweet| %>
+        <%= tweet.tweet %>
+        <%= tweet.user.name %>
+      <% end %>
+    </div>
+  </div>
+</div>
