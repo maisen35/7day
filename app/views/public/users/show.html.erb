@@ -1,4 +1,17 @@
-<h3>show</h3>
-<% if current_user == @user %>
-  <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
-<% end %>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-6 red">
+            <% if current_user == @user %>
+                <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+            <% end %>
+        </div>
+        <div class="col-6 blue">
+            <div class="vert">
+                <%= @user.name %><br>
+                <% if current_user == @user %>
+                    <%= link_to '編集', edit_user_path(@user) %>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>
