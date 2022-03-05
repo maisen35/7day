@@ -18,6 +18,10 @@ class Public::TweetsController < ApplicationController
     @tweets = Tweet.all
   end
 
+  def show
+    @tweet = Tweet.find(params[:id])
+  end
+
   private
 
   def tweet_params

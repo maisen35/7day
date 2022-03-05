@@ -1,0 +1,9 @@
+<% if tweet.favorited_by?(current_user) %>
+  <%= link_to tweet_likes_path(tweet), method: :delete do %>
+    ★<%= tweet.likes.count %>
+  <% end %>
+<% else %>
+  <%= link_to tweet_likes_path(tweet), method: :post do %>
+    ☆<%= tweet.likes.count %>
+  <% end %>
+<% end %>
