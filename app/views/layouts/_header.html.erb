@@ -12,6 +12,7 @@
 <% elsif admin_signed_in? %>
   <header>
     <div>管理者ページ</div>
+    <li><%= link_to 'ログアウト', destroy_admin_session_path, method: :delete %></li>
   </header>
 <% else %>
   <header>

@@ -1,7 +1,15 @@
 <% if user_signed_in? %>
-  <footer>お問い合わせ</footer>
+  <footer>
+    お問い合わせは
+    <%= link_to 'こちら', inquiry_path %>
+  </footer>
 <% elsif admin_signed_in? %>
   <footer></footer>
 <% else %>
-  <footer>まる儲け</footer>
+  <footer>
+    まる儲け
+    <%= link_to inquiry_path do %>
+      <div>すおう</div>
+    <% end %>
+  </footer>
 <% end %>
