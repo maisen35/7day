@@ -15,7 +15,10 @@ class Public::TweetsController < ApplicationController
   end
 
   def index
-    @tweets = Tweet.all
+    @tweets = Tweet.all.sort {|a,b|
+      b.likes.size <=>
+      a.likes.size
+    }
   end
 
   def show

@@ -1,4 +1,10 @@
+<% if @tweet.errors.any? %>
+  <% @tweet.errors.full_messages.each do |message| %>
+    <%= message %>
+  <% end %>
+<% end %>
+
 <%= form_with model: @tweet do |f| %>
   <%= f.text_field :tweet %>
-  <%= f.submit '投稿' %>
+  <%= f.submit '投稿', "data-confirm" => "投稿は一度投稿したら削除できません。\r\n本当に投稿しますか？" %>
 <% end %>
