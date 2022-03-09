@@ -1,17 +1,11 @@
 <div class="container-fluid">
-  <div class="row">
-    <div class="col-6 pink vert">
+  <div class="row parent">
+    <div class="col-6 pink child">
       <%= @tweet.tweet %>
       <%= render 'public/likes/like', tweet: @tweet %>
     </div>
-    <div class="col-6 brown vert">
-      <%= image_tag @tweet.user.get_profile_image, class: "col-2" %>
-      <%= link_to user_path(@tweet.user.id) do %>
-        <%= @tweet.user.name %>
-      <% end %>
-      <% if current_user == @tweet.user %>
-        <%= link_to '編集', edit_user_path(@tweet.user.id) %>
-      <% end %>
+    <div class="col-6 brown child">
+      <%= render 'public/users/prof', user: @tweet.user %>
     </div>
   </div>
 </div>

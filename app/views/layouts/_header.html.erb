@@ -1,8 +1,8 @@
 <% if user_signed_in? %>
-  <header>
+  <header class="navbar navbar-expand-lg">
     <div>
       <%= link_to 'Cicada', root_path %>
-        <ul class="flex">
+        <ul class="navbar-nav">
           <li><%= link_to 'マイページ', user_path(current_user) %></li>
           <li><%= link_to 'ランキング', tweets_path %></li>
           <li><%= link_to '投稿', new_tweet_path %></li>

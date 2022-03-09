@@ -42,3 +42,68 @@
   -ms-writing-mode: tb-rl;
   writing-mode: vertical-rl;
 }
+
+.parent {
+  position: relative;
+  width: 100%;
+}
+
+.parent:before {
+  content: "";
+  display: block;
+  padding-top: 67%;
+}
+
+.child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.code-box {
+  width: 50px;
+  height: 70px;
+  margin-right: 4px;
+  background-color: white;
+  border: 1px solid red;
+}
+
+.code-box:nth-child(3) {
+  margin-right: 0;
+}
+
+.code-box:nth-child(n+4) {
+  border: 1px solid pink;
+}
+
+
+.line {
+  color: red;
+  margin-top: 10px;
+}
+
+.name-font {
+  font-family: "serif", "YuGothic";
+}
+
+.between {
+  height: 50%;
+}
+
+.spbtn {
+  height: 50px;
+  width: 30%;
+  color: white;
+  background-color: pink;
+  text-align: center;
+  padding: 10px 0;
+  border-radius: 6px;
+  font-size: 20px;
+  font-family: "serif";
+}
+
+.spbtn:hover {
+  text-decoration: none;
+}
