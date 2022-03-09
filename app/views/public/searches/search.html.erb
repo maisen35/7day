@@ -1,0 +1,11 @@
+<% if @range == "User" %>
+  <% @users.each do |user| %>
+    <%= user.name %>
+  <% end %>
+<% elsif @range == "Tweet" %>
+  <% @tweets.each do |tweet| %>
+    <%= tweet.tweet %>
+  <% end %>
+<% else %>
+  <h3>該当なし</h3>
+<% end %>

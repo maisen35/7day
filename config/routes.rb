@@ -18,6 +18,7 @@ Rails.application.routes.draw do
     get 'inquiry' => 'inquiry#index'
     post 'inquiry/confirm' => 'inquiry#confirm'
     post 'inquiry/thanks' => 'inquiry#thanks'
+    get 'search' => 'searches#search'
     resources :users, only: [:show, :edit, :update] do
       resource :relationships, only: [:create, :destroy]
       get 'followings' => 'relationships#followings', as: 'followings'
