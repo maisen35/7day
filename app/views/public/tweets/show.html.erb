@@ -1,8 +1,33 @@
 <div class="container-fluid">
   <div class="row parent">
     <div class="col-6 pink child">
-      <%= @tweet.tweet %>
-      <%= render 'public/likes/like', tweet: @tweet %>
+      <br>
+      <div class="card text-white bg-danger mb-3">
+        <div class="card-body">
+          <p class="card-text"><%= @tweet.tweet %></p>
+        </div>
+        <div class="card-footer">
+          <%= render 'public/likes/like', tweet: @tweet %>
+        </div>
+      </div>
+      <br>
+      <div>
+        <div>いいねしたユーザー</div>
+        <table>
+          <% @likes.each do |like| %>
+            <tr>
+              <td class="col-2"><%= image_tag like.user.get_profile_image, size: '44x52' %></td>
+              <td class="col-7">
+                <%= link_to user_path(like.user) do %>
+                  <%= like.user.name %>
+                <% end %>
+              </td>
+              <td class="col-3"><%= render 'public/relationships/info', user: like.user %></td>
+            </tr>
+          <% end %>
+          <%= paginate @likes %>
+        </table>
+      </div>
     </div>
     <div class="col-6 brown child">
       <%= render 'public/users/prof', user: @tweet.user %>
