@@ -15,14 +15,12 @@ class Public::TweetsController < ApplicationController
   end
 
   def index
-    @tweets = Tweet.all.sort {|a,b|
-      b.likes.size <=>
-      a.likes.size
-    }
+    @tweets = Tweet.find(Like.group(:tweet_id).order('count(tweet_id) desc').limit(3).pluck(:tweet_id)) # いいね0は呼び出せない要改善
   end
 
   def show
     @tweet = Tweet.find(params[:id])
+    @likes = @tweet.likes.page(params[:page])
   end
 
   private

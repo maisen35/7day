@@ -107,3 +107,14 @@
 .spbtn:hover {
   text-decoration: none;
 }
+
+
+body {
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh; /*フッターを最下部へ*/
+}
+
+main {
+  flex: 1;
+}
