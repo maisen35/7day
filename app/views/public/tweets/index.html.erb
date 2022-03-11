@@ -3,27 +3,28 @@
     <div class="col-6 yellow child">r</div>
     <div class="col-6 grey child">
       <%= render 'public/searches/search' %>
-      <table>
+      <div>
         <% @tweets.each do |tweet| %>
-          <tr>
-            <td>
+          <div class="flex red">
+            <div>
               <%= link_to user_path(tweet.user.id) do %>
-                <%= image_tag tweet.user.get_profile_image, class: "col-2" %>
-                <%= tweet.user.name %>
+                <%= image_tag tweet.user.get_profile_image, class: "img" %>
               <% end %>
-            </td>
-            <td>
-              <%= tweet.tweet %>
-            </td>
-            <td>
-              <%= link_to 'show', tweet_path(tweet) %>
-            </td>
-            <td>
-              <%= render 'public/likes/like', tweet: tweet %>
-            </td>
-          </tr>
+            </div>
+            <div>
+              <div class="user-name">
+                <%= tweet.user.name %>
+              </div>
+              <div>
+                <%= tweet.tweet.truncate(10) %>
+              </div>
+              <div>
+                <%= render 'public/likes/like', tweet: tweet %>
+              </div>
+            </div>
+          </div>
         <% end %>
-      </table>
+      </div>
     </div>
   </div>
 </div>
