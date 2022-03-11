@@ -88,9 +88,31 @@
   font-family: "serif", "YuGothic";
 }
 
-.between {
-  height: 50%;
-}
+// .post-head {
+//   height: 30%;
+//   position: relative;
+// }
+
+// .post-head-child {
+//   position: absolute;
+//   top: 5%;
+// }
+
+// .block {
+//   height: 70%;
+//   position: relative;
+// }
+
+// .name-block {
+//   position: absolute;
+//   bottom: 20%;
+// }
+
+// .edit-block {
+//   position: absolute;
+//   bottom: 5%;
+//   right: 40%;
+// }
 
 .spbtn {
   height: 50px;
@@ -152,3 +174,22 @@ main {
   text-align: right;
 }
 
+.inquiry-title {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 30px;
+}
+
+.inquiry-page {
+  margin: 10px;
+  font-weight: bold;
+}
+
+.break-word {
+  word-break: break-all;
+}
+
+.img-size {
+  width: 100%;
+  height: auto;
+}

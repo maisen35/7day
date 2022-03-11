@@ -1,11 +1,33 @@
-<% if @range == "User" %>
-  <% @users.each do |user| %>
-    <%= user.name %>
-  <% end %>
-<% elsif @range == "Tweet" %>
-  <% @tweets.each do |tweet| %>
-    <%= tweet.tweet %>
-  <% end %>
-<% else %>
-  <h3>該当なし</h3>
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+      <% if @range == "User" %>
+        <table class="table">
+          <tr>
+            <th>名前</th>
+            <th></th>
+          </tr>
+          <% @users.each do |user| %>
+            <tr>
+              <td>
+                <%= link_to user_path(user) do %>
+                  <%= user.name %>
+                <% end %>
+              </td>
+              <td><%= render 'public/relationships/info', user: user %></td>
+            </tr>
+          <% end %>
+        </table>
+      <% elsif @range == "Tweet" %>
+        <% @tweets.each do |tweet| %>
+          <%= tweet.tweet %>
+        <% end %>
+      <% else %>
+        <h3>該当なし</h3>
+      <% end %>
+    </div>
+    <div class="col-4">
+      <%= render 'public/searches/search' %>
+    </div>
+  </div>
+</div>

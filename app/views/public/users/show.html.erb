@@ -1,20 +1,21 @@
 <div class="container-fluid">
     <div class="row parent">
-        <div class="col-6 red child">
+        <div class="col-md-6 col-sm-12 red child">
             <table class="table">
                 <% @tweets.each do |tweet| %>
                     <tr>
-                        <td><%= tweet.tweet %></td>
+                        <td><%= tweet.tweet.truncate(8) %></td>
+                        <td><%= tweet.created_at.strftime('%Y/%m/%d') %></td>
                         <td><%= render 'public/likes/like', tweet: tweet %></td>
                         <td><%= link_to 'show', tweet_path(tweet) %></td>
                     </tr>
                 <% end %>
             </table>
             <% if current_user == @user %>
-                <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+                <%= link_to 'ログアウトはこちら', destroy_user_session_path, method: :delete, class: "btn btn-danger" %>
             <% end %>
         </div>
-        <div class="col-6 blue child">
+        <div class="col-md-6 col-sm-12 blue child">
             <%= render 'public/users/prof', user: @user %>
         </div>
     </div>
