@@ -1,13 +1,26 @@
 <div class="container">
-  <div class="row">
-    <div class="col">
+  <div class="row d-flex justify-content-around">
+    <div class="col-6">
       <%= form_with model: @user, url: admin_user_path(@user) do |f| %>
-        <%= f.file_field :profile_image, placeholder: "プロフィール画像", accept: "image/*" %>
-        <%= f.text_field :name %>
-        <%= f.text_area :introduction %>
-        <%= f.radio_button :is_active, true %><%= f.label :is_active, "有効", class: "text-active" %>
-        <%= f.radio_button :is_active, false %><%= f.label :is_active, "退会済み", class: "text-invalid" %>
-        <%= f.submit '更新' %>
+        <br>
+        <div class="edit-page">
+          <%= f.label :name, '名前' %>
+          <%= f.text_field :name, class: "form-control" %>
+        </div>
+        <div class="edit-page">
+          <%= f.file_field :profile_image, accept: "image/*" %>
+        </div>
+        <div class="edit-page">
+          <%= f.label :introduction, '自己紹介' %>
+          <%= f.text_area :introduction, rows:'7', class: "form-control" %>
+        </div>
+        <div class="edit-page">
+          <%= f.radio_button :is_active, true %><%= f.label :is_active, "有効", class: "text-active" %>
+          <%= f.radio_button :is_active, false %><%= f.label :is_active, "退会済み", class: "text-invalid" %>
+        </div>
+        <div class="edit-btn">
+          <%= f.submit '更新', class: "btn btn-outline-info" %>
+        </div>
       <% end %>
     </div>
   </div>

@@ -17,6 +17,7 @@ class Tweet < ApplicationRecord
   end
 
   def tweets_count_one_day_limit
-    errors.add(:base, "本日は投稿できません") if user.tweets.last.created_at.day == Date.today.day && user.tweets.last.created_at.month == Date.today.month && user.tweets.last.created_at.year == Date.today.year
+    # byebug
+    errors.add(:base, "本日は投稿できません") if user.tweets.length > 0 && user.tweets.last.created_at.day == Date.today.day && user.tweets.last.created_at.month == Date.today.month && user.tweets.last.created_at.year == Date.today.year
   end
 end
