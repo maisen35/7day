@@ -1,32 +1,36 @@
-<%= form_for @inquiry, :url => inquiry_confirm_path do |f| %>
-  <div class="page-header">
-    <h1>お問い合わせ</h1>
-  </div>
-
-  <% if @inquiry.errors.any? %>
-    <div class="alert alert-danger" role="alert">
-      <strong>入力内容にエラーがあります</strong>
-      <ul>
-        <% @inquiry.errors.each do |attr, msg| %>
-          <li><%= msg %></li>
+<div class="container">
+  <div class="row d-flex justify-content-around">
+    <div class="col-8">
+      <% if @inquiry.errors.any? %>
+        <div class="alert alert-danger" role="alert">
+          <sdivong>入力内容にエラーがあります</sdivong>
+          <ul>
+            <% @inquiry.errors.each do |adiviv, msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <div class="inquiry-title">お問い合わせ</div>
+      <%= form_for @inquiry, :url => inquiry_confirm_path do |f| %>
+      <div class="div">
+        <div>
+          <div class="inquiry-page">名前<span class="text-danger">（必須）</span></div>
+          <div><%= f.text_field :name, class: "form-control" %></div>
+        </div>
+        <div>
+          <div class="inquiry-page">メールアドレス<span class="text-danger">（必須）</span></div>
+          <div><%= f.text_field :email, class: "form-control" %></div>
+        </div>
+        <div>
+          <div class="inquiry-page">お問い合わせ内容</div>
+          <div><%= f.text_area :message, rows:'5', class: "form-control" %></div>
+        </div>
+        <div>
+          <div><%= f.submit '確認', class: 'btn btn-primary edit-btn' %></div>
+        </div>
         <% end %>
-      </ul>
+      </div>
     </div>
-  <% end %>
-
-  <table class="table">
-    <tr>
-      <th>名前<span class="text-danger">（必須）</span></th>
-      <td><%= f.text_field :name %></td>
-    </tr>
-    <tr>
-      <th>メールアドレス<span class="text-danger">（必須）</span></th>
-      <td><%= f.text_field :email %></td>
-    </tr>
-    <tr>
-      <th>お問い合わせ内容</th>
-      <td><%= f.text_area :message %></td>
-    </tr>
-  </table>
-  <%= f.submit '確認', class: 'btn btn-primary' %>
-<% end %>
+  </div>
+</div>

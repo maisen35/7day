@@ -17,10 +17,19 @@
 <% elsif admin_signed_in? %>
   <footer></footer>
 <% else %>
-  <footer>
-    まる儲け
-    <%= link_to inquiry_path do %>
-      <div>すおう</div>
-    <% end %>
+  <footer class="bg-dark text-white pt-5 pb-4">
+    <div class="container">
+      <div class="row no-gutters">
+        <div class="col-md-4"></div>
+        <div class="col-md-8">
+          <h6 class="text-white mt-2 mb-3">お問い合わせは</h6>
+          <ul class="p-0 list-unstyled">
+            <li>
+              <%= link_to 'コチラ', inquiry_path %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </footer>
 <% end %>

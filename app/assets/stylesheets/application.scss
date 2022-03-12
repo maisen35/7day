@@ -38,6 +38,15 @@
    background-color: brown;
  }
 
+ .logo-image {
+  background-image: image-url('logo.png');
+  width: 60px;
+  height: 65px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+ }
+
 .vert {
   -ms-writing-mode: tb-rl;
   writing-mode: vertical-rl;
@@ -63,8 +72,8 @@
 }
 
 .code-box {
-  width: 50px;
-  height: 70px;
+  width: 70%;
+  height: auto;
   margin-right: 4px;
   background-color: white;
   border: 1px solid red;
@@ -88,9 +97,31 @@
   font-family: "serif", "YuGothic";
 }
 
-.between {
-  height: 50%;
-}
+// .post-head {
+//   height: 30%;
+//   position: relative;
+// }
+
+// .post-head-child {
+//   position: absolute;
+//   top: 5%;
+// }
+
+// .block {
+//   height: 70%;
+//   position: relative;
+// }
+
+// .name-block {
+//   position: absolute;
+//   bottom: 20%;
+// }
+
+// .edit-block {
+//   position: absolute;
+//   bottom: 5%;
+//   right: 40%;
+// }
 
 .spbtn {
   height: 50px;
@@ -152,3 +183,22 @@ main {
   text-align: right;
 }
 
+.inquiry-title {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 30px;
+}
+
+.inquiry-page {
+  margin: 10px;
+  font-weight: bold;
+}
+
+.break-word {
+  word-break: break-all;
+}
+
+.img-size {
+  width: 100%;
+  height: auto;
+}
