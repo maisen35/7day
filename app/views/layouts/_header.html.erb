@@ -1,7 +1,11 @@
 <header class="shadow-sm">
   <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container">
-      <div class="navbar-brand p-3"><%= link_to 'Cicada', root_path %></div>
+      <div class="navbar-brand p-3">
+        <%= link_to root_path do %>
+          <div class="logo-image"></div>
+        <% end %>
+      </div>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -9,13 +13,19 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <%= link_to "マイページ", user_path(current_user), class: 'nav-link text-dark' %>
+              <%= link_to user_path(current_user) do %>
+                <div class="nav-link text-dark"><i class="fas fa-user mr-1 ml-1"></i>マイページ</div>
+              <% end %>
             </li>
             <li class="nav-item">
-              <%= link_to 'ランキング', tweets_path, class: 'nav-link text-dark' %>
+              <%= link_to tweets_path do %>
+                <div class="nav-link text-dark"><i class="fas fa-crown mr-1 ml-1"></i>ランキング</div>
+              <% end %>
             </li>
             <li class="nav-item">
-              <%= link_to '投稿', new_tweet_path, class: 'nav-link text-dark' %>
+              <%= link_to new_tweet_path do %>
+                <div class="nav-link text-dark"><i class="fas fa-envelope mr-1 ml-1"></i>投稿</div>
+              <% end %>
             </li>
           </ul>
         </div>
@@ -28,7 +38,7 @@
           </ul>
         </div>
       <% else %>
-        <div>生きてるだけで</div>
+        <div>ログインしてください</div>
       <% end %>
     </div>
   </nav>

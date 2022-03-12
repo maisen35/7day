@@ -39,5 +39,17 @@
         <%= render 'public/relationships/info', user: user %>
       </div>
     <% end %>
+    <% if user.twitter.empty? %>
+    <% else %>
+      <%= link_to user.twitter do %>
+        <i class="fab fa-twitter"></i>
+      <% end %>
+    <% end %>
+    <% if user.instagram.empty? %>
+    <% else %>
+      <%= link_to user.instagram do %>
+        <i class="fab fa-instagram"></i>
+      <% end %>
+    <% end %>
   </div>
 </div>

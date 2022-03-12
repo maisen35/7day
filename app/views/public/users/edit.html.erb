@@ -11,6 +11,14 @@
           <%= f.file_field :profile_image, accept: "image/*" %>
         </div>
         <div class="edit-page">
+          <%= f.label :twitter, 'Twitter' %>
+          <%= f.text_field :twitter, class: "form-control" %>
+        </div>
+        <div class="edit-page">
+          <%= f.label :instagram, 'Instagram' %>
+          <%= f.text_field :instagram, class: "form-control" %>
+        </div>
+        <div class="edit-page">
           <%= f.label :introduction, '自己紹介' %>
           <%= f.text_area :introduction, rows:'7', class: "form-control" %>
         </div>

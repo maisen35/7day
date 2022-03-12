@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <table class="table">
+      <table class="table mt-5">
         <tr>
           <th>名前</th>
           <th>メールアドレス</th>
@@ -15,7 +15,14 @@
               <% end %>
             </td>
             <td><%= user.email %></td>
-            <td><%= user.is_active %></td>
+            <td>
+              <% if user.is_active? %>
+                <span class="text-success">有効</span>
+              <% else %>
+                <span class="text-secondary">退会済み</span>
+              <% end %>
+                </span>
+            </td>
           </tr>
         <% end %>
       </table>
