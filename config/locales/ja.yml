@@ -1,0 +1,7 @@
+ja:
+  enums:
+    contact:
+      subject:
+        normal: '通常のお問い合わせ'
+        report: '通報'
+        other: 'その他'

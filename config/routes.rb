@@ -15,9 +15,6 @@ Rails.application.routes.draw do
 
   scope module: :public do
     get 'tweets/thanks' => 'tweets#thanks', as: 'thanks'
-    get 'inquiry' => 'inquiry#index'
-    post 'inquiry/confirm' => 'inquiry#confirm'
-    post 'inquiry/thanks' => 'inquiry#thanks'
     get 'search' => 'searches#search'
     resources :users, only: [:show, :edit, :update] do
       resource :relationships, only: [:create, :destroy]
@@ -30,6 +27,10 @@ Rails.application.routes.draw do
   end
 
   root to: 'homes#top'
+  resources :contacts, only: [:new, :create]
+  post 'contacts/confirm', to: 'contacts#confirm', as: 'confirm'
+  post 'contacts/back', to: 'contacts#back', as: 'back'
+  get 'done', to: 'contacts#done', as: 'done'
 
 
 

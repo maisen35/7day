@@ -6,7 +6,7 @@
         <div class="card-body">
           <p class="card-text"><%= @tweet.tweet %></p>
         </div>
-        <div class="card-footer">
+        <div class="card-footer" id="like_buttons_<%= @tweet.id %>">
           <%= render 'public/likes/like', tweet: @tweet %>
         </div>
       </div>

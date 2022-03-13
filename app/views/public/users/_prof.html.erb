@@ -19,37 +19,39 @@
   </div>
 </div>
 <div class="block">
-  <div class="vert name-block">
-    <div class="name-font display-4">
-      <%= user.name %>
-    </div>
-    <div class="name-font">
-      <%= user.introduction %>
-    </div>
-    <div class="name-font">
-      フォロー<%= user.followings.count %>
-      フォロワー<%= user.followers.count %>
-    </div>
-  </div>
-  <div class="d-flex justify-content-around">
-    <% if current_user == user %>
-      <%= link_to '編　集', edit_user_path(user), class: "spbtn edit-block" %>
-    <% else %>
-      <div class="edit-block">
-        <%= render 'public/relationships/info', user: user %>
+  <div class="under">
+    <div class="vert name-block">
+      <div class="name-font display-4">
+        <%= user.name %>
       </div>
-    <% end %>
-    <% if user.twitter.empty? %>
-    <% else %>
-      <%= link_to user.twitter do %>
-        <i class="fab fa-twitter"></i>
+      <div class="name-font">
+        <%= user.introduction %>
+      </div>
+      <div class="name-font">
+        フォロー<span><%= user.followings.count %></span>
+        フォロワー<span><%= user.followers.count %></span>
+      </div>
+    </div>
+    <div>
+      <% if user.twitter.present? %>
+        <%= link_to user.twitter do %>
+          <div class="btn btn-outline-primary mr-2"><i class="fab fa-twitter display-5"></i></div>
+        <% end %>
       <% end %>
-    <% end %>
-    <% if user.instagram.empty? %>
-    <% else %>
-      <%= link_to user.instagram do %>
-        <i class="fab fa-instagram"></i>
+      <% if user.instagram.present? %>
+        <%= link_to user.instagram do %>
+          <div class="btn btn-outline-danger ml-2"><i class="fab fa-instagram display-5"></i></div>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
+    <div class="d-flex justify-content-around">
+      <% if current_user == user %>
+        <%= link_to '編　集', edit_user_path(user), class: "spbtn edit-block" %>
+      <% else %>
+        <div class="edit-block">
+          <%= render 'public/relationships/info', user: user %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
