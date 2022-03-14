@@ -18,7 +18,7 @@
               <div>
                 <%= tweet.tweet.truncate(10) %>
               </div>
-              <div>
+              <div id="like_buttons_<%= tweet.id %>">
                 <%= render 'public/likes/like', tweet: tweet %>
               </div>
             </div>

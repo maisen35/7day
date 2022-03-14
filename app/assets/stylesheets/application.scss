@@ -97,10 +97,9 @@
   font-family: "serif", "YuGothic";
 }
 
-// .post-head {
-//   height: 30%;
-//   position: relative;
-// }
+.post-head {
+  height: 30%;
+}
 
 // .post-head-child {
 //   position: absolute;
@@ -112,6 +111,10 @@
 //   position: relative;
 // }
 
+// .under {
+//   position: absolute;
+//   bottom: 1%;
+// }
 // .name-block {
 //   position: absolute;
 //   bottom: 20%;
@@ -151,8 +154,11 @@ main {
 }
 
 .image-box {
-  background-image: image-url('mqdefault.jpg');
+  background-image: image-url('saturday.jpg');
   height: 800px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
 }
 
 .img {

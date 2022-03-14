@@ -6,7 +6,9 @@
                     <tr>
                         <td><%= tweet.tweet.truncate(8) %></td>
                         <td><%= tweet.created_at.strftime('%Y/%m/%d') %></td>
-                        <td><%= render 'public/likes/like', tweet: tweet %></td>
+                        <td id="like_buttons_<%= tweet.id %>">
+                            <%= render 'public/likes/like', tweet: tweet %>
+                        </td>
                         <td><%= link_to 'show', tweet_path(tweet) %></td>
                     </tr>
                 <% end %>
