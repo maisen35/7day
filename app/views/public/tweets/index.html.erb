@@ -1,0 +1,30 @@
+<div class="container-fluid">
+  <div class="row parent">
+    <div class="col-md-6 col-sm-12 yellow child">r</div>
+    <div class="col-md-6 col-sm-12 grey child">
+      <%= render 'public/searches/search' %>
+      <div>
+        <% @tweets.each do |tweet| %>
+          <div class="flex red">
+            <div>
+              <%= link_to user_path(tweet.user.id) do %>
+                <%= image_tag tweet.user.get_profile_image, class: "img" %>
+              <% end %>
+            </div>
+            <div>
+              <div class="user-name">
+                <%= tweet.user.name %>
+              </div>
+              <div>
+                <%= tweet.tweet.truncate(10) %>
+              </div>
+              <div id="like_buttons_<%= tweet.id %>">
+                <%= render 'public/likes/like', tweet: tweet %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
