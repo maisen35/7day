@@ -154,8 +154,11 @@ main {
 }
 
 .image-box {
-  background-image: image-url('mqdefault.jpg');
+  background-image: image-url('saturday.jpg');
   height: 800px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
 }
 
 .img {
