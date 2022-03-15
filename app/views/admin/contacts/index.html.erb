@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row d-flex justify-content-around">
+    <div class="col-10">
+      <table class="table">
+        <% @contacts.each do |contact| %>
+          <tr>
+            <th>投稿者</th>
+            <th>ご用件</th>
+            <th>内容</th>
+          </tr>
+          <tr>
+            <td><%= contact.name %></td>
+            <td><%= contact.subject_i18n %></td>
+            <td>
+              <%= link_to admin_contact_path(contact) do %>
+                <%= contact.message.truncate(10) %>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+      <%= paginate @contacts %>
+    </div>
+  </div>
+</div>

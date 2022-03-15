@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   devise_for :admin,skip: [:registrations, :passwords], controllers: {
     sessions: "admin/sessions",
   }
@@ -6,6 +7,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :users, only: [:index, :show, :edit, :update]
     resources :tweets, only: [:destroy]
+    resources :contacts, only: [:index, :show]
   end
 
   devise_for :users,skip: [:passwords], controllers: {

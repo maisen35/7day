@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row d-flex justify-content-around">
+    <div class="col-10">
+      <% if @users.exists? %>
+        <table class="table">
+            <tr>
+              <th></th>
+              <th>name</th>
+              <th></th>
+              <th></th>
+            </tr>
+        <% @users.each do |user| %>
+            <tr>
+              <td><%= image_tag user.get_profile_image, class: "img" %></td>
+              <td><%= user.name %></td>
+              <td>フォロー数: <%= user.followings.count %></td>
+              <td>フォロワー数: <%= user.followers.count %></td>
+            </tr>
+        <% end %>
+          </table>
+          <%= paginate @users %>
+      <% else %>
+        <p>ユーザーはいません</p>
+      <% end %>
+    </div>
+  </div>
+</div>

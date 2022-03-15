@@ -28,8 +28,12 @@
         <%= user.introduction %>
       </div>
       <div class="name-font">
-        フォロー<span><%= user.followings.count %></span>
-        フォロワー<span><%= user.followers.count %></span>
+        <%= link_to user_followings_path(user) do %>
+          フォロー<span><%= user.followings.count %></span>
+        <% end %>
+        <%= link_to user_followers_path(user) do %>
+          フォロワー<span><%= user.followers.count %></span>
+        <% end %>
       </div>
     </div>
     <div>

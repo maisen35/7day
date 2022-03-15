@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row d-flex justify-content-around">
+    <div class="col-8">
+      <table class="table mt-5">
+        <tr>
+          <th>名前</th>
+          <td><%= @contact.name %></td>
+        </tr>
+        <tr>
+          <th>メールアドレス</th>
+          <td><%= @contact.email %></td>
+        </tr>
+        <tr>
+          <th>日付</th>
+          <td><%= @contact.created_at.strftime('%Y/%m/%d') %></td>
+        </tr>
+        <tr>
+          <th>ご用件</th>
+          <td><%= @contact.subject_i18n %></td>
+        </tr>
+        <tr>
+          <th>内容</th>
+          <td class="break-word">
+            <%= @contact.message %>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
