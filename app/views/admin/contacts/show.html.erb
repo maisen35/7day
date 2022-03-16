@@ -16,15 +16,27 @@
         </tr>
         <tr>
           <th>ご用件</th>
-          <td><%= @contact.subject_i18n %></td>
+          <td>
+            <%= @contact.subject_i18n %>
+          </td>
         </tr>
         <tr>
           <th>内容</th>
           <td class="break-word">
+            <% if @contact.check == true %>
+              <%= link_to admin_contact_path(@contact.id, contact: {check: false}), method: :patch do %>
+                <i class="fas fa-check-square"></i>
+              <% end %>
+            <% else %>
+              <%= link_to admin_contact_path(@contact.id, contact: {check: true}), method: :patch do %>
+                <i class="far fa-square"></i>
+              <% end %>
+            <% end %>
             <%= @contact.message %>
           </td>
         </tr>
       </table>
+      <%= link_to '戻る', admin_contacts_path %>
     </div>
   </div>
 </div>

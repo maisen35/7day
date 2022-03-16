@@ -5,3 +5,11 @@ ja:
         normal: '通常のお問い合わせ'
         report: '通報'
         other: 'その他'
+  activerecord:
+    attributes:
+      user:
+        name: 'ハンドルネーム'
+        email: 'メールアドレス'
+        password: 'パスワード'
+      tweet:
+        tweet: '投稿'

@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :users, only: [:index, :show, :edit, :update]
     resources :tweets, only: [:destroy]
-    resources :contacts, only: [:index, :show]
+    resources :contacts, only: [:index, :show, :update]
   end
 
   devise_for :users,skip: [:passwords], controllers: {
