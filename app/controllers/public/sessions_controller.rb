@@ -33,7 +33,7 @@ class Public::SessionsController < Devise::SessionsController
     @user = User.find_by(email: params[:user][:email])
     if @user
       if @user.valid_password?(params[:user][:password]) && !@user.is_active
-        flash[:danger] = '退会済みです'
+        flash[:danger] = 'このアカウントは退会処理済みです。 ご不明な点は下記お問い合わせまでお願いします。'
         redirect_to new_user_session_path
       end
     end

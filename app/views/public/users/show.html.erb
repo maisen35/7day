@@ -3,7 +3,7 @@
         <div class="col-md-6 col-sm-12 red child">
             <table class="table">
                 <% @tweets.each do |tweet| %>
-                    <tr>
+                    <tr class="fadeUp change-time">
                         <td><%= tweet.tweet.truncate(8) %></td>
                         <td><%= tweet.created_at.strftime('%Y/%m/%d') %></td>
                         <td id="like_buttons_<%= tweet.id %>">
