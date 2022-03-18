@@ -97,9 +97,9 @@
   font-family: "serif", "YuGothic";
 }
 
-.post-head {
-  height: 30%;
-}
+// .post-head {
+//   height: 30%;
+// }
 
 // .post-head-child {
 //   position: absolute;
@@ -126,21 +126,21 @@
 //   right: 40%;
 // }
 
-.spbtn {
-  height: 50px;
-  width: 30%;
-  color: white;
-  background-color: pink;
-  text-align: center;
-  padding: 10px 0;
-  border-radius: 6px;
-  font-size: 20px;
-  font-family: "serif";
-}
+// .spbtn {
+//   height: 50px;
+//   width: 30%;
+//   color: white;
+//   background-color: pink;
+//   text-align: center;
+//   padding: 10px 0;
+//   border-radius: 6px;
+//   font-size: 20px;
+//   font-family: "serif";
+// }
 
-.spbtn:hover {
-  text-decoration: none;
-}
+// .spbtn:hover {
+//   text-decoration: none;
+// }
 
 
 body {
@@ -205,7 +205,7 @@ main {
 }
 
 .img-size {
-  width: 100%;
+  width: 40%;
   height: auto;
 }
 
@@ -266,7 +266,7 @@ main {
 }
 
 #tall {
-  height: 800px;
+  height: 1000px;
 }
 
 
@@ -332,3 +332,78 @@ main {
 
 // ここまで。
 
+.z-index-9999 {
+  z-index: 9999;
+}
+
+.letter {
+  background-image: url(letter2.jpg);
+  height: 1000px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+}
+
+.h-10 {
+  height: 10%;
+}
+
+.w-40 {
+  width: 40%;
+}
+
+.h-32 {
+  height: 32%;
+}
+
+.h-90 {
+  height: 90%;
+}
+
+.w-90 {
+  width: 90%;
+}
+
+.rank-color:nth-child(1) {
+  background-color: #e6b422;
+}
+
+.rank-color:nth-child(2) {
+  background-color: #c0c0c0;
+}
+
+.rank-color:nth-child(3) {
+  background-color: #b87333;
+}
+
+.rank-color:nth-child(n+4) {
+  background-color: #797979;
+}
+
+.rainbow:nth-child(1) {
+  background-color: #e60012;
+}
+
+.rainbow:nth-child(2) {
+  background-color: #f39800;
+}
+
+.rainbow:nth-child(3) {
+  background-color: #fff100;
+}
+
+.rainbow:nth-child(4) {
+  background-color: #009944;
+}
+
+.rainbow:nth-child(5) {
+  background-color: #0068b7;
+}
+
+.rainbow:nth-child(6) {
+  background-color: #1d2088;
+}
+
+.rainbow:nth-child(7) {
+  background-color: #920783;
+}

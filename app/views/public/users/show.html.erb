@@ -3,7 +3,7 @@
         <div class="col-md-6 col-sm-12 red child">
             <table class="table">
                 <% @tweets.each do |tweet| %>
-                    <tr class="fadeUp change-time">
+                    <tr class="fadeUp change-time rainbow">
                         <td><%= tweet.tweet.truncate(8) %></td>
                         <td><%= tweet.created_at.strftime('%Y/%m/%d') %></td>
                         <td id="like_buttons_<%= tweet.id %>">
@@ -17,7 +17,7 @@
                 <%= link_to 'ログアウトはこちら', destroy_user_session_path, method: :delete, class: "btn btn-danger" %>
             <% end %>
         </div>
-        <div class="col-md-6 col-sm-12 blue child">
+        <div class="col-md-6 col-sm-12 child">
             <%= render 'public/users/prof', user: @user %>
         </div>
     </div>
