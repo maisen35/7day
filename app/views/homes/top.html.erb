@@ -1,6 +1,12 @@
 <div class="container-fluid">
-  <div class="row">
-    <div class="col-md-6 col-xs-12"id="tall">
+  <div class="row parent">
+    <div class="col-md-6 col-xs-12 position-relative child" id="tall">
+      <div class="position-absolute z-index-9999 w-100 h-100">
+        <div class="d-flex justify-content-center align-items-center flex-column w-100 h-100">
+          <h1>Hoge</h1>
+          <p>Fuga</p>
+        </div>
+      </div>
       <div id="theTarget">
         <div class="image1"></div>
         <div class="image2"></div>
@@ -11,13 +17,18 @@
         <div class="image7"></div>
       </div>
     </div>
-    <div class="col-md-6 col-xs-12">
-      <div class="d-flex justify-content-around">
-        <div>
-          <%= link_to '新規登録', new_user_registration_path, class: "btn btn-success" %>
-        </div>
-        <div>
-          <%= link_to 'ログイン', new_user_session_path, class: "btn btn-warning" %>
+    <div class="col-md-6 col-xs-12 child">
+      <div class="letter w-100">
+        <div class="w-100 h-90 d-flex align-items-end justify-content-end justify-content-around">
+          <div class="w-50"></div>
+          <div class="w-50 d-flex justify-content-around">
+            <div>
+              <%= link_to '新規登録', new_user_registration_path, class: "btn btn-success" %>
+            </div>
+            <div>
+              <%= link_to 'ログイン', new_user_session_path, class: "btn btn-warning" %>
+            </div>
+          </div>
         </div>
       </div>
     </div>
