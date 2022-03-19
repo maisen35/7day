@@ -14,6 +14,12 @@
  *= require_self
  */
 
+ * {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+ }
+
  .red {
    background-color: red;
  }
@@ -153,13 +159,6 @@ main {
   flex: 1;
 }
 
-.image-box {
-  background-image: image-url('saturday.jpg');
-  height: 800px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top center;
-}
 
 .img {
   width: 50px;
@@ -169,11 +168,11 @@ main {
   margin: 10px;
 }
 
-.flex {
-  display: flex;
-  margin: 0 0 10px auto;
-  width: 70%;
-}
+// .flex {
+//   display: flex;
+//   margin: 0 0 10px auto;
+//   width: 70%;
+// }
 
 .user-name {
   margin-top: 5px;
@@ -211,58 +210,57 @@ main {
 
 .image1 {
   background-image: url(sunday.jpg);
-  height: 800px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top center;
+  // height: 800px;
+  // background-size: cover;
+  // background-repeat: no-repeat;
+  // background-position: top center;
 }
 
 .image2 {
   background-image: url(monday.jpg);
-  height: 800px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top center;
+  // height: 800px;
+  // background-size: cover;
+  // background-repeat: no-repeat;
+  // background-position: top center;
 }
 
 .image3 {
   background-image: url(mqdefault.jpg);
-  height: 800px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top center;
+  // height: 800px;
+  // background-size: cover;
+  // background-repeat: no-repeat;
+  // background-position: top center;
 }
 
 .image4 {
   background-image: url(no_image.jpg);
-  height: 800px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top center;
+  // height: 800px;
+  // background-size: cover;
+  // background-repeat: no-repeat;
+  // background-position: top center;
 }
 
 .image5 {
   background-image: url(d_14647373.jpg);
-  height: 800px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top center;
+  // height: 800px;
+  // background-size: cover;
+  // background-repeat: no-repeat;
+  // background-position: top center;
 }
 
 .image6 {
   background-image: url(Friday.jpg);
-  height: 800px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top center;
+  // height: 800px;
+  // background-size: cover;
+  // background-repeat: no-repeat;
+  // background-position: top center;
 }
 
 .image7 {
   background-image: url(saturday.jpg);
-  height: 800px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top center;
+  // background-size: cover;
+  // background-repeat: no-repeat;
+  // background-position: top center;
 }
 
 #tall {
@@ -338,8 +336,9 @@ main {
 
 .letter {
   background-image: url(letter2.jpg);
-  height: 1000px;
-  background-size: cover;
+//  height: 1000px;
+  width: 100%;
+  background-size: contain;
   background-repeat: no-repeat;
   background-position: top center;
 }
@@ -407,3 +406,19 @@ main {
 .rainbow:nth-child(7) {
   background-color: #920783;
 }
+
+.logo-about {
+  background-image: image-url('logo.png');
+  width: 10%;
+  height: 10%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+
+ }
+
+// @media screen and (max-width: 766px) {
+//   #tall  {
+//     height: 500px;
+//   }
+// }

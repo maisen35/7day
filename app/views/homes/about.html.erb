@@ -18,16 +18,16 @@
       </div>
     </div>
     <div class="col-md-6 col-xs-12">
-      <h3 class="text-center mt-5 mb-3"><%= image_tag 'logo', width: '10%', height: '10%' %>は、あなたのＳＮＳ活をサポートします！</h3>
+      <div class="d-flex justify-content-center mt-5 mb-3"><div class="logo-about"></div><h3>は、あなたのＳＮＳライフをサポートします！</h3></div>
       <p class="text-center mb-5 font-italic">
         Cicadaは投稿の数を制限したSNSです！<br>
         投稿できる数は七回、一日に一回です。<br>
         あなたは、どんな投稿をしますか？<br>
       </p>
       <div class="d-flex align-content-start flex-wrap" style="height: 400px">
-        <div class="col-4 h-50 text-center pt-5 card text-white bg-info">こんな投稿があります</div>
+        <div class="col-4 h-50 card text-white bg-info d-flex justify-content-center align-items-center"><div class="text-center">こんな投稿があります</div></div>
         <% @tweets.each do |tweet| %>
-          <div class="card text-dark border-info col-4 h-50 text-center pt-5"><%= tweet.tweet.truncate(30) %></div>
+          <div class="card text-dark border-info col-4 h-50 text-center d-flex justify-content-center align-items-center"><div class-"text-center"><%= tweet.tweet.truncate(30) %></div></div>
         <% end %>
       </div>
     </div>
