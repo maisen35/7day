@@ -1,13 +1,10 @@
-<div class="letter w-100 h-100 position-relative">
-  <h6 class="font-weight-bold w-100 h-10 position-absolute d-flex align-items-center justify-content-center">プ　ロ　フ　ィ　ー　ル</h6>
-  <div class="position-absolute w-40 h-32 d-flex justify-content-around align-items-center">
-    <%= image_tag user.get_profile_image, class: "img-size" %>
-  </div>
-  <div class="d-flex w-100 h-100">
-    <div class="w-50 h-75 vert d-flex justify-content-end align-items-center">
-      <div class="">
-        <div class="name-font display-4">
-          <%= user.name %>
+<div class="w-100 h-100 post-letter">
+  <div class="box w-100 h-100">
+    <div class="font-weight-bold w-100 d-flex justify-content-center position-absolute">プ　ロ　フ　ィ　ー　ル</div>
+     <div class="position-absolute vert w-25 h-80 d-flex justify-content-end">
+      <div>
+        <div>
+          <h5 class="name-font font-weight-bold"><%= user.name %></h5>
         </div>
         <div class="name-font">
           <%= user.introduction %>
@@ -22,27 +19,55 @@
         </div>
       </div>
     </div>
-    <div class="w-50 h-90 d-flex align-items-end justify-content-end justify-content-around">
-      <% if user.twitter.present? %>
-        <%= link_to user.twitter do %>
-          <div class="btn btn-outline-primary"><i class="fab fa-twitter"></i></div>
-        <% end %>
-      <% end %>
-      <% if user.instagram.present? %>
-        <%= link_to user.instagram do %>
-          <div class="btn btn-outline-danger"><i class="fab fa-instagram"></i></div>
-        <% end %>
-      <% end %>
+      <div class="d-flex w-100 h-50">
+      <div class="box-stamp">
+        <%= image_tag user.get_profile_image, class: "img-size" %>
+      </div>
+      <div class="box-code d-flex">
+        <div class="code-box"></div>
+        <div class="code-box"></div>
+        <div class="code-box"></div>
+        <div class="code-box"></div>
+        <div class="code-box"></div>
+        <div class="code-box"></div>
+        <div class="code-box"></div>
+      </div>
+    </div>
 
-      <% if current_user == user %>
-        <%= link_to edit_user_path(user) do %>
-          <div class="btn btn-outline-secondary"><i class="fas fa-edit"></i></div>
-        <% end %>
-      <% else %>
-        <div class="edit-block">
-          <%= render 'public/relationships/info', user: user %>
+    <div class="w-100 h-50 d-flex align-items-end">
+      <div class="w-60 h-100 d-flex align-items-end">
+        <div class="box-code-min d-flex">
+          <div class="code-min"></div>
+          <div class="code-min"></div>
+          <div class="code-min"></div>
+          <div class="code-min"></div>
+          <div class="code-min"></div>
+          <div class="code-min"></div>
+          <div class="code-min"></div>
         </div>
-      <% end %>
+      </div>
+      <div class="w-40 d-flex justify-content-around up-btn">
+        <% if user.twitter.present? %>
+          <%= link_to user.twitter do %>
+            <div class="btn btn-outline-primary"><i class="fab fa-twitter"></i></div>
+          <% end %>
+        <% end %>
+        <% if user.instagram.present? %>
+          <%= link_to user.instagram do %>
+            <div class="btn btn-outline-danger"><i class="fab fa-instagram"></i></div>
+          <% end %>
+        <% end %>
+
+        <% if current_user == user %>
+          <%= link_to edit_user_path(user) do %>
+            <div class="btn btn-outline-secondary"><i class="fas fa-edit"></i></div>
+          <% end %>
+        <% else %>
+          <div class="edit-block">
+            <%= render 'public/relationships/info', user: user %>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

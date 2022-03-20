@@ -19,26 +19,30 @@
     </div>
     <div class="col-md-6 col-sm-12 grey child">
       <%= render 'public/searches/search' %>
-      <div>
+      <div class="d-flex justify-content-around align-items-center flex-column">
         <% @tweets.each do |tweet| %>
-          <div class="flex rank-color fadeUp change-time">
+          <div class="d-flex rank-color fadeUp change-time col-10">
             <div>
               <%= link_to user_path(tweet.user.id) do %>
                 <%= image_tag tweet.user.get_profile_image, class: "img" %>
               <% end %>
             </div>
             <div>
-              <div class="user-name">
-                <%= tweet.user.name %>
-              </div>
-              <div>
-                <%= tweet.tweet.truncate(10) %>
-              </div>
+              <%= link_to tweet_path(tweet) do %>
+                <div class="text-dark">
+                  <div class="user-name">
+                    <%= tweet.user.name %>
+                  </div>
+                  <div>
+                    <%= tweet.tweet.truncate(15) %>
+                  </div>
+                </div>
+              <% end %>
               <div id="like_buttons_<%= tweet.id %>">
                 <%= render 'public/likes/like', tweet: tweet %>
               </div>
             </div>
-          </div>
+         </div>
         <% end %>
       </div>
     </div>
