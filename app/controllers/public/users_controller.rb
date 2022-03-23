@@ -4,6 +4,7 @@ class Public::UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @tweets = @user.tweets
+    @time_lines = Tweet.page(params[:page]).per(5).order(created_at: :desc)
   end
 
   def edit

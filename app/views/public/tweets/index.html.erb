@@ -1,27 +1,26 @@
-<div class="container-fluid">
-  <div class="row parent">
-    <div class="col-md-6 col-sm-12 child position-relative"id="tall">
-      <div class="position-absolute z-index-9999 w-100 h-100">
-        <div class="d-flex justify-content-center align-items-center flex-column w-100 h-100">
-          <h1>Hoge</h1>
-          <p>Fuga</p>
+<div class="container-fluid max-window">
+  <div class="row parent max-window-row">
+    <div class="col-md-6 col-sm-12 child position-relative max-window">
+      <div class="position-absolute z-index-9998 w-100 h-100">
+        <div class="d-flex justify-content-center align-items-center w-100 h-100">
+          <h1 class="font-weight-bold">現在のランキング</h1>
         </div>
       </div>
       <div id="theTarget">
-        <div class="image1"></div>
-        <div class="image2"></div>
-        <div class="image3"></div>
-        <div class="image4"></div>
-        <div class="image5"></div>
-        <div class="image6"></div>
-        <div class="image7"></div>
+        <div class="image1 rank-title"></div>
+        <div class="image2 rank-title"></div>
+        <div class="image3 rank-title"></div>
+        <div class="image4 rank-title"></div>
+        <div class="image5 rank-title"></div>
+        <div class="image6 rank-title"></div>
+        <div class="image7 rank-title"></div>
       </div>
     </div>
-    <div class="col-md-6 col-sm-12 grey child">
+    <div class="col-md-6 col-sm-12 child">
       <%= render 'public/searches/search' %>
       <div class="d-flex justify-content-around align-items-center flex-column">
         <% @tweets.each do |tweet| %>
-          <div class="d-flex rank-color fadeUp change-time col-10">
+          <div class="d-flex rank-color fadeUp change-time col-md-10 col-sm-12">
             <div>
               <%= link_to user_path(tweet.user.id) do %>
                 <%= image_tag tweet.user.get_profile_image, class: "img" %>
@@ -33,7 +32,7 @@
                   <div class="user-name">
                     <%= tweet.user.name %>
                   </div>
-                  <div>
+                  <div class="text-nowrap">
                     <%= tweet.tweet.truncate(15) %>
                   </div>
                 </div>

@@ -2,9 +2,10 @@
   <div class="row d-flex justify-content-around">
     <div class="col-6">
       <%= form_with model: @user do |f| %>
+        <%= render 'layouts/errors', obj: @user %>
         <br>
         <div class="edit-page">
-          <%= f.label :name, '名前' %>
+          <%= f.label :name, 'ハンドルネーム' %>
           <%= f.text_field :name, class: "form-control" %>
         </div>
         <div class="edit-page">

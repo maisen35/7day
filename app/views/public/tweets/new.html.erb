@@ -1,14 +1,10 @@
 <div class="container">
   <div class="row d-flex justify-content-around">
-    <div class="col-8">
+    <div class="col-md-8 col-sm 12">
       <br>
 
       <br>
-      <% if @tweet.errors.any? %>
-        <% @tweet.errors.full_messages.each do |message| %>
-          <%= message %>
-        <% end %>
-      <% end %>
+     <%= render 'layouts/errors', obj: @tweet %>
 
       <%= form_with model: @tweet do |f| %>
         <div class="d-flex justify-content-between mb-1">

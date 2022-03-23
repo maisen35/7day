@@ -16,9 +16,9 @@ class User < ApplicationRecord
   # 与フォロー関係を通じて参照→自分がフォローしている人
   has_many :followings, through: :relationships, source: :followed
 
-  validates :name, presence: true, uniqueness: true
+  validates :name, presence: true, uniqueness: true, length: { minimum: 2, maximum: 10 }
   def get_profile_image
-    (profile_image.attached?) ? profile_image : 'no_image.jpg'
+    (profile_image.attached?) ? profile_image : 'no_image_square.jpg'
   end
 
   def follow(user_id)

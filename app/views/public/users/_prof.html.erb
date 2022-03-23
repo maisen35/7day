@@ -1,7 +1,34 @@
-<div class="w-100 h-100 post-letter">
+<div class="w-100 h-100">
   <div class="box w-100 h-100">
-    <div class="font-weight-bold w-100 d-flex justify-content-center position-absolute">プ　ロ　フ　ィ　ー　ル</div>
-     <div class="position-absolute vert w-25 h-80 d-flex justify-content-end">
+    <div class="font-weight-bold w-100 d-flex justify-content-center position-absolute">プロフィール</div>
+    <div class="position-absolute d-flex justify-content-around w-50 z-index-9999 posi">
+      <% if user.twitter.present? %>
+        <%= link_to user.twitter do %>
+          <div class="btn btn-outline-primary"><i class="fab fa-twitter"></i></div>
+        <% end %>
+      <% end %>
+      <% if user.instagram.present? %>
+        <%= link_to user.instagram do %>
+          <div class="btn btn-outline-danger"><i class="fab fa-instagram"></i></div>
+        <% end %>
+      <% end %>
+
+      <% if current_user == user %>
+        <%= link_to edit_user_path(user) do %>
+          <div class="btn btn-outline-secondary"><i class="fas fa-edit"></i></div>
+        <% end %>
+      <% else %>
+        <div class="edit-block">
+          <%= render 'public/relationships/info', user: user %>
+        </div>
+      <% end %>
+    </div>
+    <div class="position-absolute w-100 h-100 d-flex justify-content-center align-items-center">
+      <% if current_user != user %>
+        <div class="vert font-weight-bold font-mode"><%= current_user.name %>様</div>
+      <% end %>
+    </div>
+    <div class="position-absolute vert w-25 h-80 d-flex justify-content-end font-mode-name">
       <div>
         <div>
           <h5 class="name-font font-weight-bold"><%= user.name %></h5>
@@ -24,50 +51,85 @@
         <%= image_tag user.get_profile_image, class: "img-size" %>
       </div>
       <div class="box-code d-flex">
-        <div class="code-box"></div>
-        <div class="code-box"></div>
-        <div class="code-box"></div>
-        <div class="code-box"></div>
-        <div class="code-box"></div>
-        <div class="code-box"></div>
-        <div class="code-box"></div>
+        <div class="code-box">
+          <% if user.tweets.count >= 1 %>
+            <div class="code-color1"></div>
+          <% end %>
+        </div>
+        <div class="code-box">
+          <% if user.tweets.count >= 2 %>
+            <div class="code-color2"></div>
+          <% end %>
+        </div>
+        <div class="code-box">
+          <% if user.tweets.count >= 3 %>
+            <div class="code-color3"></div>
+          <% end %>
+        </div>
+        <div class="code-box">
+          <% if user.tweets.count >= 4 %>
+            <div class="code-color4"></div>
+          <% end %>
+        </div>
+        <div class="code-box">
+          <% if user.tweets.count >= 5 %>
+            <div class="code-color5"></div>
+          <% end %>
+        </div>
+        <div class="code-box">
+          <% if user.tweets.count >= 6 %>
+            <div class="code-color6"></div>
+          <% end %>
+        </div>
+        <div class="code-box">
+          <% if user.tweets.count == 7 %>
+            <div class="code-color7"></div>
+          <% end %>
+        </div>
       </div>
     </div>
 
     <div class="w-100 h-50 d-flex align-items-end">
       <div class="w-60 h-100 d-flex align-items-end">
         <div class="box-code-min d-flex">
-          <div class="code-min"></div>
-          <div class="code-min"></div>
-          <div class="code-min"></div>
-          <div class="code-min"></div>
-          <div class="code-min"></div>
-          <div class="code-min"></div>
-          <div class="code-min"></div>
+          <div class="code-min">
+            <% if user.tweets.count >= 1 %>
+              <div class="code-color1"></div>
+            <% end %>
+          </div>
+          <div class="code-min">
+            <% if user.tweets.count >= 2 %>
+              <div class="code-color2"></div>
+            <% end %>
+          </div>
+          <div class="code-min">
+            <% if user.tweets.count >= 3 %>
+              <div class="code-color3"></div>
+            <% end %>
+          </div>
+          <div class="code-min">
+            <% if user.tweets.count >= 4 %>
+              <div class="code-color4"></div>
+            <% end %>
+          </div>
+          <div class="code-min">
+            <% if user.tweets.count >= 5 %>
+              <div class="code-color5"></div>
+            <% end %>
+          </div>
+          <div class="code-min">
+            <% if user.tweets.count >= 6 %>
+              <div class="code-color6"></div>
+            <% end %>
+          </div>
+          <div class="code-min">
+            <% if user.tweets.count == 7 %>
+              <div class="code-color7"></div>
+            <% end %>
+          </div>
         </div>
       </div>
-      <div class="w-40 d-flex justify-content-around up-btn">
-        <% if user.twitter.present? %>
-          <%= link_to user.twitter do %>
-            <div class="btn btn-outline-primary"><i class="fab fa-twitter"></i></div>
-          <% end %>
-        <% end %>
-        <% if user.instagram.present? %>
-          <%= link_to user.instagram do %>
-            <div class="btn btn-outline-danger"><i class="fab fa-instagram"></i></div>
-          <% end %>
-        <% end %>
 
-        <% if current_user == user %>
-          <%= link_to edit_user_path(user) do %>
-            <div class="btn btn-outline-secondary"><i class="fas fa-edit"></i></div>
-          <% end %>
-        <% else %>
-          <div class="edit-block">
-            <%= render 'public/relationships/info', user: user %>
-          </div>
-        <% end %>
-      </div>
     </div>
   </div>
 </div>
