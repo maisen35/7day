@@ -13,3 +13,7 @@ ja:
         password: 'パスワード'
       tweet:
         tweet: '投稿'
+      contact:
+        name: '名前'
+        email: 'メールアドレス'
+        message: 'メッセージ'

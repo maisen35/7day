@@ -1,27 +1,34 @@
-<div class="container-fluid">
-  <div class="row parent">
+<div class="container-fluid max-window">
+  <div class="row parent max-window-row">
     <div class="col-md-6 col-xs-12 position-relative child" id="tall">
       <div class="position-absolute z-index-9999 w-100 h-100">
         <div class="d-flex justify-content-center align-items-center flex-column w-100 h-100">
-          <h1>Hoge</h1>
-          <p>Fuga</p>
+          <h1 class="font-size-title">Cicadaへようこそ</h1>
+          <p class="font-weight-bold">アカウントを作成しましょう。</p>
         </div>
       </div>
       <div id="theTarget">
-        <div class="image1"></div>
-        <div class="image2"></div>
-        <div class="image3"></div>
-        <div class="image4"></div>
-        <div class="image5"></div>
-        <div class="image6"></div>
-        <div class="image7"></div>
+        <div class="image1 rank-title rad"></div>
+        <div class="image2 rank-title rad"></div>
+        <div class="image3 rank-title rad"></div>
+        <div class="image4 rank-title rad"></div>
+        <div class="image5 rank-title rad"></div>
+        <div class="image6 rank-title rad"></div>
+        <div class="image7 rank-title rad"></div>
       </div>
     </div>
-    <div class="col-md-6 col-xs-12" style="height:1000px">
-      <div class="z-index-9999 w-100 h-100 child">
+    <div class="col-md-6 col-xs-12 hyer">
+      <div class="w-100 h-100 child">
         <div class="position-absolute d-flex justify-content-center align-items-center flex-column w-100 h-100 vert">
-          <h1>Hoge</h1>
-          <p>Fuga</p>
+          <h1>みなさま</h1>
+        </div>
+        <div class="position-absolute w-50 h-100 z-index-9999 posi d-flex align-items-end justify-content-around">
+          <div>
+            <%= link_to '新規登録', new_user_registration_path, class: "btn btn--green font-weight-bold" %>
+          </div>
+          <div>
+            <%= link_to 'ログイン', new_user_session_path, class: "btn btn--yellow font-weight-bold" %>
+          </div>
         </div>
         <div class="post-letter w-100 h-100">
           <div class="box w-100 h-100">
@@ -40,26 +47,16 @@
           </div>
         </div>
       </div>
-      <div class="w-100 h-100">
-        <div class="w-100 h-100 d-flex align-items-end justify-content-end">
-          <div class="w-60 h-50 d-flex align-items-end">
-            <div class="box-code-min d-flex">
-              <div class="code-min"></div>
-              <div class="code-min"></div>
-              <div class="code-min"></div>
-              <div class="code-min"></div>
-              <div class="code-min"></div>
-              <div class="code-min"></div>
-              <div class="code-min"></div>
-            </div>
-          </div>
-          <div class="w-40 d-flex justify-content-around up-btn">
-            <div>
-              <%= link_to '新規登録', new_user_registration_path, class: "btn btn-success" %>
-            </div>
-            <div>
-              <%= link_to 'ログイン', new_user_session_path, class: "btn btn-warning" %>
-            </div>
+      <div class="w-100 h-100 d-flex align-items-end">
+        <div class="w-60 h-50 d-flex align-items-end">
+          <div class="box-code-min d-flex z-index-9998">
+            <div class="code-min"></div>
+            <div class="code-min"></div>
+            <div class="code-min"></div>
+            <div class="code-min"></div>
+            <div class="code-min"></div>
+            <div class="code-min"></div>
+            <div class="code-min"></div>
           </div>
         </div>
       </div>
