@@ -3,6 +3,6 @@ class HomesController < ApplicationController
   end
 
   def about
-    @tweets = Tweet.all.sample(5)
+    @tweets = Tweet.all.sample(8)
   end
 end

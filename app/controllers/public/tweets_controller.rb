@@ -15,7 +15,11 @@ class Public::TweetsController < ApplicationController
   end
 
   def index
-    @tweets = Tweet.find(Like.group(:tweet_id).order('count(tweet_id) desc').limit(10).pluck(:tweet_id)) # いいね0は呼び出せない要改善
+    @tweets = Tweet.includes(:user).limit(10).sort {|a,b|
+    b.likes.size <=>
+    a.likes.size
+    }
+    # @tweets = Tweet.find(Like.group(:tweet_id).order('count(tweet_id) desc').limit(10).pluck(:tweet_id)) # いいね0は呼び出せない要改善
   end
 
   def show
