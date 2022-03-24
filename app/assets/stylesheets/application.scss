@@ -644,6 +644,21 @@ a.btn--yellow:hover {
   border-radius: 10px;
 }
 
+.about-height {
+  height: 400px;
+}
+
+.about-tall {
+  height: 1000px;
+}
+
+.about-title {
+  overflow-wrap: break-word;
+	word-break: keep-all;
+}
+
+
+
 @media screen and (max-width: 767px) {
   .hyer {
     height: 540px;
@@ -660,6 +675,14 @@ a.btn--yellow:hover {
   #tall {
     width: 100%;
     height: 540px;
+  }
+
+  .about-height {
+    height: 400px;
+  }
+
+  .about-tall {
+    height: 800px;
   }
 }
 
@@ -679,6 +702,14 @@ a.btn--yellow:hover {
   .font-about {
     font-size: 10px;
   }
+
+  .about-height {
+    height: 300px;
+  }
+
+  .about-tall {
+    height: 700px;
+  }
 }
 
 @media screen and (max-width: 448px) {
@@ -693,6 +724,4 @@ a.btn--yellow:hover {
     height: 30px;
     padding: 2px;
   }
-
-
 }
