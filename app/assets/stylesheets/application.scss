@@ -617,7 +617,7 @@ a.btn--green {
   color: #fff;
   background-color: #3eb370;
   height: 50px;
-  padding: 10px;
+  padding-top: 11px;
 }
 
 .btn--green:hover,
@@ -631,13 +631,17 @@ a.btn--yellow {
   color: #000;
   background-color: #fff20a;
   height: 50px;
-  padding: 10px;
+  padding-top: 11px;
 }
 
 .btn--yellow:hover,
 a.btn--yellow:hover {
   color: #000;
   background: #b3b33e;
+}
+
+.rad {
+  border-radius: 10px;
 }
 
 @media screen and (max-width: 767px) {

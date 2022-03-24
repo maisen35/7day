@@ -14,7 +14,11 @@
       </div>
     </footer>
 <% elsif admin_signed_in? %>
-  <footer></footer>
+  <footer class="bg-dark pt-5 pb-4">
+    <div class="text-center text-white">
+      管理者ページ
+    </div>
+  </footer>
 <% else %>
   <footer class="bg-dark text-white pt-5 pb-4">
     <div class="container">
