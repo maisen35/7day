@@ -510,9 +510,7 @@ main {
   font-size: calc(1.125rem + ((1vw - 7.68px) * 3.6458));
 }
 
-.font-mode-name {
-  font-size: calc(0.125rem + ((1vw - 3px) * 1.1667));
-}
+
 
 .font-mode-title {
   font-size: vw(32);
@@ -581,6 +579,10 @@ main {
 }
 
 .hyer {
+  height: 900px;
+}
+
+.hyer-tweet-show {
   height: 900px;
 }
 
@@ -657,6 +659,16 @@ a.btn--yellow:hover {
 	word-break: keep-all;
 }
 
+.text-indent {
+  margin-left: 1em;
+  text-indent: -1em;
+}
+
+.warning-line {
+  border-top: solid 1px #ccc;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
 
 
 @media screen and (max-width: 767px) {
@@ -683,6 +695,14 @@ a.btn--yellow:hover {
 
   .about-tall {
     height: 800px;
+  }
+
+  .warning-text {
+    font-size: 14px;
+  }
+
+  .font-mode-name {
+    font-size: 14px;
   }
 }
 

@@ -1,7 +1,7 @@
 class Tweet < ApplicationRecord
   belongs_to :user
   has_many :likes, dependent: :destroy
-  validates :tweet, presence: true
+  validates :tweet, presence: true, length: { maximum: 140 }
   validate :tweets_count_must_be_within_limit
   validate :tweets_count_one_day_limit
 

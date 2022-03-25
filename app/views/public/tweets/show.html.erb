@@ -1,6 +1,6 @@
 <div class="container-fluid max-window">
   <div class="row parent max-window-row">
-    <div class="col-md-6 col-xs-12 child max-window" style="height: 1000px;">
+    <div class="col-md-6 col-xs-12 child max-window hyer-tweet-show">
       <br>
       <div class="card text-white bg-danger mb-3">
         <div class="card-body">
@@ -34,7 +34,7 @@
         <%= paginate @likes %>
       </div>
     </div>
-    <div class="col-md-6 col-xs-12 child max-window" style="height: 1000px;">
+    <div class="col-md-6 col-xs-12 child max-window hyer">
       <%= render 'public/users/prof', user: @tweet.user %>
     </div>
   </div>
