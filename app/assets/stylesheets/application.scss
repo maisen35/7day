@@ -670,6 +670,30 @@ a.btn--yellow:hover {
   padding-bottom: 1em;
 }
 
+.hash-card {
+	position: relative;
+}
+
+.hash-card:before {
+	content: '';
+	display: block;
+	width: 100%;
+	padding-top: 100%;
+}
+
+.hash-card .hash-squeare {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.hash-squeare {
+  padding: 5%;
+}
+
+
 
 @media screen and (max-width: 767px) {
   .hyer {
@@ -704,6 +728,11 @@ a.btn--yellow:hover {
   .font-mode-name {
     font-size: 14px;
   }
+
+  .warning-title {
+    font-size: 20px;
+    font-weight: bold;
+  }
 }
 
 @media screen and (max-width: 576px) {
@@ -729,6 +758,10 @@ a.btn--yellow:hover {
 
   .about-tall {
     height: 700px;
+  }
+
+  .code-box {
+    border: solid 5px #0D0116;
   }
 }
 

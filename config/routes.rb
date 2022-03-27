@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   scope module: :public do
     get 'tweets/thanks' => 'tweets#thanks', as: 'thanks'
     get 'search' => 'searches#search'
+    get '/tweet/hashtag/:name' => "tweets#hashtag"
     resources :users, only: [:show, :edit, :update] do
       resource :relationships, only: [:create, :destroy]
       get 'followings' => 'relationships#followings', as: 'followings'

@@ -1,10 +1,22 @@
 class Tweet < ApplicationRecord
   belongs_to :user
   has_many :likes, dependent: :destroy
+  has_many :tweet_hashtag_relations, dependent: :destroy
+  has_many :hashtags, through: :tweet_hashtag_relations, dependent: :destroy
+  
   validates :tweet, presence: true, length: { maximum: 140 }
   validate :tweets_count_must_be_within_limit
   validate :tweets_count_one_day_limit
 
+  after_create do
+    tweet = Tweet.find_by(id: self.id)
+    hashtags = self.tweet.scan(/[#＃][\w\p{Han}ぁ-ヶｦ-ﾟー]+/)
+    tweet.hashtags = []
+    hashtags.uniq.map do |hashtag|
+      tag = Hashtag.find_or_create_by(hashname: hashtag.downcase.delete('#'))
+      tweet.hashtags << tag
+    end
+  end
 
   def favorited_by?(user)
     likes.exists?(user_id: user.id)
