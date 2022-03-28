@@ -27,6 +27,11 @@ class Public::TweetsController < ApplicationController
     @likes = @tweet.likes.page(params[:page])
   end
 
+  def hashtag
+    @tag = Hashtag.find_by(hashname: params[:name])
+    @tweets = @tag.tweets.page(params[:page]).per(9)
+  end
+
   private
 
   def tweet_params
