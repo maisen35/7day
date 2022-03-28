@@ -10,12 +10,12 @@ Admin.create!(
   email: "admin@admin",
   password: "admin1"
   )
-  
+
 User.create!([{
   name: "山本",
   email: "yama@moto",
   password: "takeshi03"
-  
+
 }, {
   name: "大沢",
   email: "oo@sawa",
@@ -32,14 +32,14 @@ User.create!([{
 
 Tweet.create!([{
   user_id: 1,
-  tweet: "僕は、元気です。皆さんは、元気ですか？なるほど。元気出しましょう。"
+  tweet: "僕は、元気です。皆さんは、元気ですか？なるほど。元気出しましょう。空前絶後#hello"
 }, {
   user_id: 2,
-  tweet: "おなかがすきました。ハンバーグが好きです。"
+  tweet: "おなかがすきました。ハンバーグが好きです。空前絶後#hello"
 }, {
   user_id: 3,
-  tweet: "嫌なことがありました。"
+  tweet: "嫌なことがありました。空前絶後#hello"
 }, {
   user_id: 4,
-  tweet: "ひどいことを言ってしまったな。後悔してます。"
+  tweet: "ひどいことを言ってしまったな。後悔してます。空前絶後#hello"
 }])

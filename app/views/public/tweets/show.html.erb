@@ -1,14 +1,17 @@
 <div class="container-fluid max-window">
   <div class="row parent max-window-row">
-    <div class="col-md-6 col-xs-12 child max-window" style="height: 1000px;">
+    <div class="col-md-6 col-xs-12 child max-window hyer-tweet-show">
       <br>
       <div class="card text-white bg-danger mb-3">
         <div class="card-body">
-          <p class="card-text"><%= @tweet.tweet %></p>
+          <p class="card-text">
+            <%= render_with_hashtags(@tweet.tweet) %>
+          </p>
         </div>
         <div class="card-footer d-flex justify-content-between">
           <div id="like_buttons_<%= @tweet.id %>">
             <%= render 'public/likes/like', tweet: @tweet %>
+
           </div>
           <%= link_to "https://twitter.com/share?url=#{ request.url }&text= #{ @tweet.tweet.truncate(10) }、投稿を見てみよう！ ", target: '_blank' do %>
             <i class="fab fa-twitter"></i>シェア
@@ -34,7 +37,7 @@
         <%= paginate @likes %>
       </div>
     </div>
-    <div class="col-md-6 col-xs-12 child max-window" style="height: 1000px;">
+    <div class="col-md-6 col-xs-12 child max-window hyer">
       <%= render 'public/users/prof', user: @tweet.user %>
     </div>
   </div>

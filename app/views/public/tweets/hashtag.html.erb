@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row d-flex justify-content-around">
+    <h5 class="col-12 mt-2">#<%= @tag.hashname %></h5>
+    <% @tweets.each do |tweet| %>
+      <div class="col-md-4 col-sm-8 card hash-card">
+        <%= link_to tweet_path(tweet) do %>
+          <div class="hash-squeare"><%= render_with_hashtags(tweet.tweet) %></div>
+        <% end %>
+      </div>
+    <% end %>
+    <%= paginate @tweets %>
+  </div>
+</div>
