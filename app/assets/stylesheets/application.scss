@@ -506,8 +506,7 @@ main {
 }
 
 .font-mode {
-  // font-size: calc(0.125rem + ((1vw - 3px) * 1.1667));
-  font-size: calc(1.125rem + ((1vw - 7.68px) * 3.6458));
+  font-size: 30px;
 }
 
 
@@ -762,6 +761,10 @@ a.btn--yellow:hover {
 
   .code-box {
     border: solid 5px #0D0116;
+  }
+
+  .font-mode {
+    font-size: 17px;
   }
 }
 
