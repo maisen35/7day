@@ -18,6 +18,7 @@
    margin: 0;
    padding: 0;
    box-sizing: border-box;
+   font-family: 'Fredoka One', cursive, "M PLUS 1p";
  }
 
  .red {
@@ -157,6 +158,7 @@ body {
 
 main {
   flex: 1;
+  background-color: #f0ffff;
 }
 
 
@@ -650,7 +652,7 @@ a.btn--yellow:hover {
 }
 
 .about-tall {
-  height: 1000px;
+  height: 900px;
 }
 
 .about-title {
@@ -690,6 +692,14 @@ a.btn--yellow:hover {
 
 .hash-squeare {
   padding: 5%;
+}
+
+.ara {
+  height: 900px;
+}
+
+.head-color {
+  background-color: #b0c4de;
 }
 
 
@@ -732,6 +742,10 @@ a.btn--yellow:hover {
     font-size: 20px;
     font-weight: bold;
   }
+
+  .ara {
+    height: 1080px;
+  }
 }
 
 @media screen and (max-width: 576px) {
@@ -740,7 +754,7 @@ a.btn--yellow:hover {
   }
 
   #tall {
-    height: 300px;
+    height: 380px;
   }
 
   .font-size-title {
@@ -765,6 +779,10 @@ a.btn--yellow:hover {
 
   .font-mode {
     font-size: 17px;
+  }
+
+  .ara {
+    height: auto;
   }
 }
 
