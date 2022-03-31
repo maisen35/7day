@@ -24,7 +24,7 @@ class Public::TweetsController < ApplicationController
 
   def show
     @tweet = Tweet.find(params[:id])
-    @likes = @tweet.likes.page(params[:page])
+    @likes = @tweet.likes.page(params[:page]).includes(:user)
   end
 
   def hashtag
