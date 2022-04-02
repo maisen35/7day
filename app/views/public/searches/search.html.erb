@@ -1,33 +1,65 @@
 <div class="container">
-  <div class="row">
-    <div class="col-8">
+  <div class="row d-flex justify-content-around">
+    <div class="col-md-8 col-sm-12 order-bottom">
+      <h5 class="mt-4 font-weight-bold">"<%= @word %>"検索結果</h5>
       <% if @range == "User" %>
-        <table class="table">
-          <tr>
-            <th>名前</th>
-            <th></th>
-          </tr>
-          <% @users.each do |user| %>
+        <% if @users.present? %>
+          <table class="table">
             <tr>
-              <td>
-                <%= link_to user_path(user) do %>
-                  <%= user.name %>
-                <% end %>
-              </td>
-              <td><%= render 'public/relationships/info', user: user %></td>
+              <th>ユーザーネーム</th>
+              <th></th>
             </tr>
-          <% end %>
-        </table>
-      <% elsif @range == "Tweet" %>
-        <% @tweets.each do |tweet| %>
-          <%= tweet.tweet %>
+            <% @users.each do |user| %>
+              <tr>
+                <td>
+                  <%= link_to user_path(user) do %>
+                    <%= user.name %>
+                  <% end %>
+                </td>
+                <td><%= render 'public/relationships/info', user: user %></td>
+              </tr>
+            <% end %>
+          </table>
+          <%= paginate @users %>
+          <% else %>
+            <h2>対象のユーザーはいません</h2>
         <% end %>
       <% else %>
-        <h3>該当なし</h3>
+        <% if @tweets.present? %>
+          <table class="table">
+            <tr>
+              <th>投稿内容</th>
+            </tr>
+            <% @tweets.each do |tweet| %>
+              <tr>
+                <td>
+                  <%= link_to tweet_path(tweet) do %>
+                    <%= tweet.tweet.truncate(30) %>
+                  <% end %>
+                </td>
+              </tr>
+            <% end %>
+          </table>
+          <%= paginate @tweets %>
+        <% else %>
+          <h2>対象の投稿はありません</h2>
+        <% end %>
       <% end %>
     </div>
-    <div class="col-4">
-      <%= render 'public/searches/search' %>
+    <div class="col-md-4 col-sm-12 order-top">
+      <br>
+      <div class="search_form">
+        <%= form_with url: search_path, local: true, method: :get do |f| %>
+          <div class="d-flex justify-content-end">
+            <%= f.text_field :words, class: 'form-control' %>
+          </div>
+          <div class="d-flex justify-content-end">
+            <%= f.select :range, options_for_select([['ユーザー','User'], ['投稿','Tweet']]), {}, class: 'form-control' %>
+            <%= f.submit "検索", class: "btn btn-primary" %>
+          </div>
+        <% end %>
+      </div>
+      <br>
     </div>
   </div>
 </div>
