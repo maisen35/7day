@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row d-flex justify-content-around">
+    <div class="col-8">
+      <div class="card mt-5">
+        <div class="card-header">
+          <%= @tweet.user.name %>
+        </div>
+        <div class="card-body">
+          <%= @tweet.tweet %>
+        </div>
+        <div class="card-footer">
+          <%= link_to '削除', admin_tweet_path(@tweet), method: :delete, "data-confirm" => "本当に削除しますか？", class: "btn btn-sm btn-danger"%>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

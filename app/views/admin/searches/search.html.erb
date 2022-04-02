@@ -1,60 +1,80 @@
 <div class="container">
-  <div class="row d-flex justify-content-around">
+  <div class="row">
     <div class="col-md-8 col-sm-12 order-bottom">
       <h5 class="mt-4 font-weight-bold">"<%= @word %>"検索結果</h5>
       <% if @range == "User" %>
         <% if @users.present? %>
           <table class="table">
             <tr>
-              <th>ユーザーネーム</th>
+              <th>名前</th>
               <th></th>
             </tr>
             <% @users.each do |user| %>
               <tr>
                 <td>
-                  <%= link_to user_path(user) do %>
+                  <%= link_to admin_user_path(user) do %>
                     <%= user.name %>
                   <% end %>
                 </td>
-                <td><%= render 'public/relationships/info', user: user %></td>
+                <td></td>
               </tr>
             <% end %>
           </table>
           <%= paginate @users %>
-          <% else %>
-            <h2>対象のユーザーはいません</h2>
+        <% else %>
+          <h2>対象のユーザーはいません</h2>
         <% end %>
-      <% else %>
+      <% elsif @range == "Tweet" %>
         <% if @tweets.present? %>
           <table class="table">
             <tr>
               <th>投稿内容</th>
             </tr>
             <% @tweets.each do |tweet| %>
-              <tr>
-                <td>
-                  <%= link_to tweet_path(tweet) do %>
-                    <%= tweet.tweet.truncate(30) %>
-                  <% end %>
-                </td>
-              </tr>
+            <tr>
+              <td>
+                <%= link_to admin_tweet_path(tweet) do %>
+                  <%= tweet.tweet.truncate(30) %>
+                <% end %>
+              </td>
+            </tr>
             <% end %>
           </table>
           <%= paginate @tweets %>
         <% else %>
           <h2>対象の投稿はありません</h2>
         <% end %>
+      <% else %>
+        <% if @contacts.present? %>
+          <table class="table">
+            <tr>
+              <th>お問い合わせ内容</th>
+            </tr>
+             <% @contacts.each do |contact| %>
+              <tr>
+                <td>
+                  <%= link_to admin_contact_path(contact) do %>
+                    <%= contact.message %>
+                  <% end %>
+                </td>
+              </tr>
+            <% end %>
+          </table>
+          <%= paginate @contacts %>
+        <% else %>
+          <h2>対象のお問い合わせはありません</h2>
+        <% end %>
       <% end %>
     </div>
     <div class="col-md-4 col-sm-12 order-top">
       <br>
       <div class="search_form">
-        <%= form_with url: search_path, local: true, method: :get do |f| %>
+        <%= form_with url: admin_search_path, local: true, method: :get do |f| %>
           <div class="d-flex justify-content-end">
             <%= f.text_field :words, class: 'form-control' %>
           </div>
           <div class="d-flex justify-content-end">
-            <%= f.select :range, options_for_select([['ユーザー','User'], ['投稿','Tweet']]), {}, class: 'form-control' %>
+            <%= f.select :range, options_for_select([['ユーザー','User'], ['投稿','Tweet'], ['お問い合わせ','Contact']]), {}, class: 'form-control' %>
             <%= f.submit "検索", class: "btn btn-primary" %>
           </div>
         <% end %>

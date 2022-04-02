@@ -5,8 +5,9 @@ Rails.application.routes.draw do
   }
 
   namespace :admin do
+    get 'search' => 'searches#search'
     resources :users, only: [:index, :show, :edit, :update]
-    resources :tweets, only: [:destroy]
+    resources :tweets, only: [:index, :show, :destroy]
     resources :contacts, only: [:index, :show, :update]
   end
 
