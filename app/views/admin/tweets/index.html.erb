@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row d-flex justify-content-around">
+    <div class="col-md-10 col-sm-12">
+      <%= render 'admin/searches/search' %>
+      <table class="table mt-2">
+        <tr>
+          <th>投稿内容</th>
+          <th>いいね数</th>
+        </tr>
+        <% @tweets.each do |tweet| %>
+          <tr>
+            <td>
+              <%= link_to admin_tweet_path(tweet) do %>
+                <%= tweet.tweet.truncate(20) %>
+              <% end %>
+            </td>
+            <td>
+              <%= tweet.likes.count %>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+      <%= paginate @tweets %>
+    </div>
+  </div>
+</div>
