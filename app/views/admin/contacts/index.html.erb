@@ -11,16 +11,8 @@
         </tr>
         <% @contacts.each do |contact| %>
         <tr>
-          <td>
-            <% if contact.check == true %>
-              <%= link_to admin_contact_path(contact.id, contact: {check: false}), method: :patch do %>
-                <i class="fas fa-check-square"></i>
-              <% end %>
-            <% else %>
-              <%= link_to admin_contact_path(contact.id, contact: {check: true}), method: :patch do %>
-                <i class="far fa-square"></i>
-              <% end %>
-            <% end %>
+          <td id="check_btn_<%= contact.id %>">
+            <%= render 'admin/contacts/check', contact: contact %>
           </td>
           <td><%= contact.name %></td>
           <td><%= contact.subject_i18n %></td>

@@ -1,0 +1,9 @@
+<% if contact.check == true %>
+  <%= link_to admin_contact_path(contact.id, contact: {check: false}), remote: true, method: :patch do %>
+    <i class="fas fa-check-square"></i>
+  <% end %>
+<% else %>
+  <%= link_to admin_contact_path(contact.id, contact: {check: true}), remote: true, method: :patch do %>
+    <i class="far fa-square"></i>
+  <% end %>
+<% end %>
