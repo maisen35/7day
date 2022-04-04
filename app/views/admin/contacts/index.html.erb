@@ -2,28 +2,26 @@
   <div class="row d-flex justify-content-around">
     <div class="col-md-10 col-sm-12">
       <%= render 'admin/searches/search' %>
-      <table class="table">
-        <tr>
-          <th>チェック</th>
-          <th>投稿者</th>
-          <th>ご用件</th>
-          <th>内容</th>
-        </tr>
-        <% @contacts.each do |contact| %>
-        <tr>
-          <td id="check_btn_<%= contact.id %>">
-            <%= render 'admin/contacts/check', contact: contact %>
-          </td>
-          <td><%= contact.name %></td>
-          <td><%= contact.subject_i18n %></td>
-          <td>
-            <%= link_to admin_contact_path(contact) do %>
-              <%= contact.message.truncate(10) %>
-            <% end %>
-          </td>
-        </tr>
-        <% end %>
-      </table>
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link active" href="#all" data-toggle="tab" >すべて</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#normal" data-toggle="tab">通常のお問い合わせ</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#report" data-toggle="tab">通報</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#other" data-toggle="tab">その他</a>
+        </li>
+      </ul>
+        <div class="tab-content">
+          <div class="tab-pane active" id="all"><%= render 'admin/contacts/list', contacts: @contacts %></div>
+          <div class="tab-pane" id="normal"><%= render 'admin/contacts/list', contacts: @contact_normal %></div>
+          <div class="tab-pane" id="report"><%= render 'admin/contacts/list', contacts: @contact_report %></div>
+          <div class="tab-pane" id="other"><%= render 'admin/contacts/list', contacts: @contact_other %></div>
+        </div>
       <%= paginate @contacts %>
     </div>
   </div>
