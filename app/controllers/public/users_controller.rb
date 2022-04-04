@@ -5,6 +5,7 @@ class Public::UsersController < ApplicationController
     @user = User.find(params[:id])
     @tweets = @user.tweets
     @time_lines = Tweet.page(params[:page]).per(5).order(created_at: :desc)
+    @mylines = Tweet.where(user_id: [current_user.id, *current_user.following_ids]).order(created_at: :desc).page(params[:page]).per(5)
   end
 
   def edit
