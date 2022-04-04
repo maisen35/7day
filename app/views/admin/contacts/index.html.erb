@@ -2,36 +2,26 @@
   <div class="row d-flex justify-content-around">
     <div class="col-md-10 col-sm-12">
       <%= render 'admin/searches/search' %>
-      <table class="table">
-        <tr>
-          <th>チェック</th>
-          <th>投稿者</th>
-          <th>ご用件</th>
-          <th>内容</th>
-        </tr>
-        <% @contacts.each do |contact| %>
-        <tr>
-          <td>
-            <% if contact.check == true %>
-              <%= link_to admin_contact_path(contact.id, contact: {check: false}), method: :patch do %>
-                <i class="fas fa-check-square"></i>
-              <% end %>
-            <% else %>
-              <%= link_to admin_contact_path(contact.id, contact: {check: true}), method: :patch do %>
-                <i class="far fa-square"></i>
-              <% end %>
-            <% end %>
-          </td>
-          <td><%= contact.name %></td>
-          <td><%= contact.subject_i18n %></td>
-          <td>
-            <%= link_to admin_contact_path(contact) do %>
-              <%= contact.message.truncate(10) %>
-            <% end %>
-          </td>
-        </tr>
-        <% end %>
-      </table>
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <%= link_to 'すべて', '#all', 'data-toggle': 'tab', class: 'nav-link active' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to '通常のお問い合わせ', '#normal', 'data-toggle': 'tab', class: 'nav-link' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to '通報', '#report', 'data-toggle': 'tab', class: 'nav-link' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'その他', '#other', 'data-toggle': 'tab', class: 'nav-link' %>
+        </li>
+      </ul>
+        <div class="tab-content">
+          <div class="tab-pane active" id="all"><%= render 'admin/contacts/list', contacts: @contacts %></div>
+          <div class="tab-pane" id="normal"><%= render 'admin/contacts/list', contacts: @contact_normal %></div>
+          <div class="tab-pane" id="report"><%= render 'admin/contacts/list', contacts: @contact_report %></div>
+          <div class="tab-pane" id="other"><%= render 'admin/contacts/list', contacts: @contact_other %></div>
+        </div>
       <%= paginate @contacts %>
     </div>
   </div>
