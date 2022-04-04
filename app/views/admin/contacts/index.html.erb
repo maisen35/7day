@@ -4,16 +4,16 @@
       <%= render 'admin/searches/search' %>
       <ul class="nav nav-tabs">
         <li class="nav-item">
-          <a class="nav-link active" href="#all" data-toggle="tab" >すべて</a>
+          <%= link_to 'すべて', '#all', 'data-toggle': 'tab', class: 'nav-link active' %>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#normal" data-toggle="tab">通常のお問い合わせ</a>
+          <%= link_to '通常のお問い合わせ', '#normal', 'data-toggle': 'tab', class: 'nav-link' %>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#report" data-toggle="tab">通報</a>
+          <%= link_to '通報', '#report', 'data-toggle': 'tab', class: 'nav-link' %>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#other" data-toggle="tab">その他</a>
+          <%= link_to 'その他', '#other', 'data-toggle': 'tab', class: 'nav-link' %>
         </li>
       </ul>
         <div class="tab-content">

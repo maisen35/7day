@@ -1,13 +1,15 @@
 <table class="table">
   <tr>
-    <th>チェック</th>
+    <th>
+      <%= link_to 'チェック', admin_contacts_path %>
+    </th>
     <th>投稿者</th>
     <th>ご用件</th>
     <th>内容</th>
   </tr>
   <% contacts.each do |contact| %>
   <tr>
-    <td id="check_btn_<%= contact.id %>">
+    <td class="check_btn_<%= contact.id %>">
       <%= render 'admin/contacts/check', contact: contact %>
     </td>
     <td><%= contact.name %></td>
