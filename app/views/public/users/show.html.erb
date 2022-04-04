@@ -20,37 +20,17 @@
                     </tr>
                 <% end %>
             </table>
-            <div class="d-flex justify-content-around align-items-center flex-column">
-                <% @time_lines.each do |tweet| %>
-                    <div class="d-flex fadeUp change-time line-color w-100">
-                        <div>
-                            <%= link_to user_path(tweet.user.id) do %>
-                                <%= image_tag tweet.user.get_profile_image, class: "img" %>
-                            <% end %>
-                        </div>
-                        <div class="w-100">
-                            <%= link_to tweet_path(tweet) do %>
-                                <div class="text-dark">
-                                  <div class="user-name">
-                                    <%= tweet.user.name %>
-                                  </div>
-                                  <div class="text-nowrap">
-                                    <%= tweet.tweet.truncate(15) %>
-                                  </div>
-                                </div>
-                            <% end %>
-                            <div class="d-flex justify-content-between">
-                                <div id="like_buttons_<%= tweet.id %>">
-                                    <%= render 'public/likes/like', tweet: tweet %>
-                                </div>
-                                <div>
-                                    <i class="far fa-clock clock-icon"></i><%= time_ago_in_words(tweet.created_at) %>前
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                <% end %>
-                <%= paginate @time_lines %>
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <%= link_to 'すべての投稿', '#all-post', 'data-toggle': 'tab', class: 'nav-link active' %>
+                </li>
+                <li class="nav-item">
+                    <%= link_to 'フォロワーの投稿', '#my-post', 'data-toggle': 'tab', class: 'nav-link' %>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" id="all-post"><%= render 'public/users/timeline', time_lines: @time_lines %></div>
+                <div class="tab-pane" id="my-post"><%= render 'public/users/timeline', time_lines: @mylines %></div>
             </div>
             <% if current_user == @user %>
                 <%= link_to 'ログアウトはこちら',  destroy_user_session_path, method: :delete, "data-confirm" => "ログアウトしますか？", class: "btn btn-danger" %>
