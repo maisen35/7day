@@ -12,6 +12,9 @@
           <%= link_to '削除', admin_tweet_path(@tweet), method: :delete, "data-confirm" => "本当に削除しますか？", class: "btn btn-sm btn-danger"%>
         </div>
       </div>
+      <div class="m-3">
+        <%= link_to '戻る', admin_tweets_path %>
+      </div>
     </div>
   </div>
 </div>
