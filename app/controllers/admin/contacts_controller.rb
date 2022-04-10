@@ -15,6 +15,13 @@ class Admin::ContactsController < ApplicationController
     @contact = Contact.find(params[:id])
     @contact.update(contact_params)
   end
+  
+  def checker
+    @contact_check = Contact.where(check: false).page(params[:page])
+    @contact_normal = Contact.where(subject: 'normal').page(params[:page]).per(10)
+    @contact_report = Contact.where(subject: 'report').page(params[:page]).per(10)
+    @contact_other = Contact.where(subject: 'other').page(params[:page]).per(10)
+  end
 
   private
 

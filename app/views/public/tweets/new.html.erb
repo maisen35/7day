@@ -6,7 +6,7 @@
       <br>
      <%= render 'layouts/errors', obj: @tweet %>
 
-      <%= form_with model: @tweet do |f| %>
+      <%= form_with model: @tweet, do |f| %>
         <div class="d-flex justify-content-between mb-1">
           <h5 class="font-weight-bold">投稿フォーム</h5>
           <%= f.submit '投稿', "data-confirm" => "投稿は一度投稿したら削除できません。\r\n本当に投稿しますか？", class: "btn btn-success" %>

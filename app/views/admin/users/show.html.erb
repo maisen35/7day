@@ -7,6 +7,10 @@
           <td><%= @user.name %></td>
         </tr>
         <tr>
+          <th>メール</th>
+          <td><%= @user.email %></td>
+        </tr>
+        <tr>
           <th>Twitter</th>
           <td><%= @user.twitter %></td>
         </tr>
@@ -42,7 +46,7 @@
         <% @tweets.each do |tweet| %>
           <tr>
             <td>
-              <%= link_to admin_tweet_path(tweet) do %> 
+              <%= link_to admin_tweet_path(tweet) do %>
                 <%= tweet.tweet.truncate(10) %>
               <% end %>
             </td>
@@ -51,6 +55,7 @@
           </tr>
         <% end %>
       </table>
+      <div class="m-3"><%= link_to '戻る', admin_users_path %></div>
     </div>
   </div>
 </div>
