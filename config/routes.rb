@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     get 'search' => 'searches#search'
+    get 'contacts/checker' => 'contacts#checker', as: 'checker'
     resources :users, only: [:index, :show, :edit, :update]
     resources :tweets, only: [:index, :show, :destroy]
     resources :contacts, only: [:index, :show, :update]
