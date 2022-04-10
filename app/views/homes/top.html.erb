@@ -23,12 +23,14 @@
           <h1>みなさま</h1>
         </div>
         <div class="position-absolute w-50 h-100 z-index-9999 posi d-flex align-items-end justify-content-around">
-          <div>
-            <%= link_to '新規登録', new_user_registration_path, class: "btn btn--green font-weight-bold" %>
-          </div>
-          <div>
-            <%= link_to 'ログイン', new_user_session_path, class: "btn btn--yellow font-weight-bold" %>
-          </div>
+          <% unless user_signed_in? %>
+            <div>
+              <%= link_to '新規登録', new_user_registration_path, class: "btn btn--green font-weight-bold" %>
+            </div>
+            <div>
+              <%= link_to 'ログイン', new_user_session_path, class: "btn btn--yellow font-weight-bold" %>
+            </div>
+          <% end %>
         </div>
         <div class="post-letter w-100 h-100">
           <div class="box w-100 h-100">
